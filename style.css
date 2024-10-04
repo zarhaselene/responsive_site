@@ -15,14 +15,15 @@ header {
 }
 
 nav {
-  text-align: center;
-  padding: 10px;
+  display: none; /* Hide navbar on mobile */
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 20px;
+/* Add hamburger menu*/
+.hamburger {
+  font-size: 1.3rem;
+}
+.hamburger:hover {
+  color: pink;
 }
 
 main {
@@ -37,32 +38,49 @@ main {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+/* Add button hover */
+.button:hover {
+  background-color: #333333;
+  transform: translateY(5px);
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  width: 900px;
+  width: 100%; /* Change width of containers on mobile  */
 }
 
 .section {
-  padding: 40px;
+  padding: 20px 10px; /* Change padding of sections on mobile  */
   background-color: #f1f1f1;
   margin: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  text-align: center; /* Center text on mobile */
 }
-
+.section img {
+  width: 100%;
+}
+img {
+  border-radius: 10px; /* Add the same border radius on all images */
+}
 .section1 {
   display: flex;
+  flex-direction: column; /* Change flex direction on mobile */
   align-items: center;
   gap: 30px;
 }
 
 .section1 img {
-  width: 50%;
+  width: 100%; /* Change image width on mobile from 50% */
   height: auto;
-  border-radius: 10px;
+  filter: grayscale(0);
+  transition: 0.3s ease-in-out;
+}
+.section1 img:hover {
+  filter: grayscale(100%); /* Gray Scale hover effect */
 }
 
 .section1 h2 {
@@ -70,19 +88,88 @@ main {
 }
 
 .catGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex; /* Remove grid on mobile */
+  flex-direction: column;
   width: 100%;
 }
 
 .catGrid img {
   width: 100%;
   height: auto;
+  margin: 10px 0; /* Add margin top & bottom to images on mobile */
 }
-
+/* Add hover for mail link */
+.contact {
+  transition: 0.3s ease-in-out;
+}
+.contact:hover {
+  color: red;
+  font-size: 1.5rem;
+}
 footer {
   background-color: #333;
   color: #fff;
   text-align: center;
   padding: 10px;
+}
+
+/* Tablets and bigger screens */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none; /* Hide hamburger menu*/
+  }
+  nav {
+    display: block; /* Show navbar */
+    text-align: center;
+    padding: 10px;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    transition: 0.3s ease-in-out;
+  }
+  /* Add link hover */
+  nav a:hover {
+    color: cadetblue;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+  }
+
+  .section {
+    padding: 40px;
+    text-align: start;
+  }
+
+  .section1 {
+    flex-direction: row;
+  }
+
+  .section1 img {
+    width: 50%;
+  }
+  /* Add hover effect to the second cat image*/
+  div > div:nth-child(2) > img {
+    transition: 1s ease;
+  }
+  div > div:nth-child(2) > img:hover {
+    transform: scale(0.8);
+  }
+
+  .catGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+  }
+  /* Add image hover for grid */
+  .catGrid img:hover {
+    transform: scale(1.3);
+  }
 }
