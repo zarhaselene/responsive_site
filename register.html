@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Kattsidan</title>
+    <script
+      src="https://kit.fontawesome.com/839aa981e5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1>Kattsidan</h1>
+      <nav>
+        <a href="/index.html">Start</a>
+        <a href="#">Katter</a>
+        <a href="#">Om oss</a>
+        <a href="#">Kontakt</a>
+      </nav>
+      <span class="hamburger">
+        <i class="fa fa-bars"></i>
+      </span>
+    </header>
+    <main>
+      <div class="container">
+        <div class="form-container">
+          <form
+            action="https://httpbin.org/anything"
+            method="post"
+            target="_blank"
+          >
+            <h2>Registrera dig hos oss!</h2>
+            <div class="input-container">
+              <input type="text" name="first_name" placeholder="Förnamn" />
+              <input type="text" name="last_name" placeholder="Efternamn" />
+            </div>
+            <div class="input-container">
+              <input type="text" name="username" placeholder="Användarnamn" />
+              <input type="email" name="email" placeholder="Email" />
+              <input type="password" name="password" placeholder="Lösenord" />
+            </div>
+            <div class="input-container">
+              <select name="fave_breed">
+                <option value="fave" selected="true" disabled>
+                  Favorit-kattras
+                </option>
+                <option value="ragdoll">Ragdoll</option>
+                <option value="maine_coon">Maine coon</option>
+                <option value="sibirisk_katt">Sibirisk katt</option>
+                <option value="norsk_skogkatt">Norsk skogkatt</option>
+                <option value="brittiskt_korthår">Brittiskt korthår</option>
+              </select>
+            </div>
+            <div class="input-container">
+              <div class="checkbox">
+                <input type="checkbox" name="terms" required />
+                <label for="checkbox">Godkänn villkoren </label>
+              </div>
+              <input type="submit" value="Bli medlem" class="button" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>&copy; 2023 Kattsidan</footer>
+  </body>
+</html>
